@@ -32,8 +32,8 @@ public class User {
     @OneToMany (cascade = CascadeType.ALL, mappedBy = "customer")
     private List<Order> orders = new ArrayList<>();
 
-    @ElementCollection
-    private List<ShopDto> favorites = new ArrayList();
+//    @ElementCollection
+//    private List<ShopDto> favorites = new ArrayList();
 
 
     @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)

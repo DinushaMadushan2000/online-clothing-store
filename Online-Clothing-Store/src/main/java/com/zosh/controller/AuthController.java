@@ -72,7 +72,8 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         String jwt=jwtProvider.generateToken(authentication);
-        AuthResponse authResponse=new AuthResponse;
+
+        AuthResponse authResponse=new AuthResponse();
         authResponse.setJwt(jwt);
         authResponse.setMessage("Register Success");
         authResponse.setRole(savedUser.getRole());
@@ -99,9 +100,9 @@ public class AuthController {
 
         String jwt=jwtProvider.generateToken(authentication);
 
-        AuthResponse authResponse=new AuthResponse;
+        AuthResponse authResponse=new AuthResponse();
         authResponse.setJwt(jwt);
-        authResponse.setMessage("Register Success");
+        authResponse.setMessage("login success");
         authResponse.setRole(USER_ROLE.valueOf(role));
 
 
@@ -115,7 +116,7 @@ public class AuthController {
 
     private Authentication authenticate(String username, String password) {
 
-        UserDetails userDetails=CustomerUserDetailsService.loadUserByUsername(username);
+        UserDetails userDetails=customerUserDetailsService.loadUserByUsername(username);
 
         if(userDetails==null){
             throw new BadCredentialsException("invalid username...");

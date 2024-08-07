@@ -37,7 +37,7 @@ public class AppConfig {
 
 
 
-        return null;
+        return http.build();
     }
 
     private CorsConfigurationSource configurationSource() {

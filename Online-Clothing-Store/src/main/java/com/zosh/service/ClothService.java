@@ -14,7 +14,7 @@ public interface ClothService {
 
     public List<Cloth> searchCloth(String keyword);
 
-    public Cloth findClothById(Long clothId) throws Exception;
+    public  Cloth findClothById(Long clothId) throws Exception;
 
     public Cloth updateAvailabilityStatus(Long clothId)throws Exception;
 
